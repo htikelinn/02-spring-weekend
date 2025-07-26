@@ -1,7 +1,11 @@
 *.class
 *.settings
 *.classpath
+<<<<<<< HEAD
 *.project
+=======
+*.json
+>>>>>>> deae421 (settings change)
 .factorypath
 /**/target/
 /.metadata/

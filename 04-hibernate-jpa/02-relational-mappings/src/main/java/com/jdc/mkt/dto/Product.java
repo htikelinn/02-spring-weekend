@@ -37,6 +37,6 @@ public class Product {
 	@ManyToOne
 	private Category category;
 
-	@ManyToMany
+	@ManyToMany(mappedBy = "products")
 	private List<Voucher> vouchers;
 }

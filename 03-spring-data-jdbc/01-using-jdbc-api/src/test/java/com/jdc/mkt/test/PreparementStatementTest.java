@@ -2,7 +2,6 @@ package com.jdc.mkt.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -50,6 +49,6 @@ public class PreparementStatementTest extends JunitFactory{
 		var res = service.save(p);
 		assertEquals(1, res);
 
-		logger.printResultSetAsTable("select * from person_tbl");
+		logger.printTableByStringQuery("select * from person_tbl");
 	}
 }

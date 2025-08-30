@@ -1,11 +1,12 @@
 package com.jdc.mkt.dao;
 
-import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreatorFactory;
 import org.springframework.jdbc.core.RowMapper;
@@ -18,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class PersonQueryService {
+public class B_JdbcTemplate_QueryService {
 
 	final JdbcTemplate jdbc;
 	
@@ -32,6 +33,23 @@ public class PersonQueryService {
 	@Autowired
 	@Qualifier("byAge")
 	PreparedStatementCreatorFactory ageFactory;
+	
+	
+	
+	public Integer selectCountByNameLike(String sql,String name) {
+		return jdbc.queryForObject(sql, Integer.class,name);
+	}
+	
+	public List<Map<String, Object>> selectWithQueryForListByNameLike(String sql,String name){
+		return jdbc.queryForList(sql,name);
+	}
+	
+	public List<String> selectWithQueryForListByName(String sql,String name){
+		return  jdbc.queryForList(sql,String.class,name);
+	}
+	public List<Person> selectWithRowMapper(String sql){
+		return jdbc.query(sql, new BeanPropertyRowMapper<Person>(Person.class));
+	}
 	
 	public List<Person> selectWithPreparedStatementCreatorByAge(int first,int last){		
 		var creator = ageFactory.newPreparedStatementCreator(List.of(first,last));		
@@ -52,9 +70,7 @@ public class PersonQueryService {
 		return jdbc.query(creator, rowMapper);
 	}
 	
-	public List<Person> selectWithRowMapper(String sql){
-		return jdbc.query(sql, rowMapper);
-	}
+	
 
 	public List<Person> selectWithRowCallbackHandler(String sql) {
 		

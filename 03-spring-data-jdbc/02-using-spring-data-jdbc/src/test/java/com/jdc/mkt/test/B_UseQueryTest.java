@@ -2,6 +2,7 @@ package com.jdc.mkt.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
@@ -13,17 +14,52 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import com.jdc.mkt.AppConfig;
-import com.jdc.mkt.dao.PersonQueryService;
+import com.jdc.mkt.dao.B_JdbcTemplate_QueryService;
 
 @TestMethodOrder(OrderAnnotation.class)
 @SpringJUnitConfig(classes = AppConfig.class)
 public class B_UseQueryTest{
 
 	@Autowired
-	PersonQueryService service;
+	B_JdbcTemplate_QueryService service;
 	
 	@Test
+	@Order(7)
+	@Disabled
+	@Sql(scripts = {
+			"classpath:/person.sql",
+			"classpath:/insert.sql"
+	})
+	@DisplayName("7.select by name with queryForObject")
+	void testSeven(@Value("${p.select.count.by.name.like}") String query) {
+		var count = service.selectCountByNameLike(query,"a".concat("%"));
+		assertEquals(2,count);
+	
+	}
+	
+	@Test
+	@Order(6)
+	@Disabled
+	@Sql(scripts = {
+			"classpath:/person.sql",
+			"classpath:/insert.sql"
+	})
+	@DisplayName("6.select by name with queryByListWith Args")
+	void testSix(
+			@Value("${p.select.name.like}") String query1,
+			@Value("${p.select.by.name}") String query2) {
+		
+		var list1 = service.selectWithQueryForListByNameLike(query2,"a".concat("%"));
+		assertEquals(2, list1.size());
+		
+		var list2 = service.selectWithQueryForListByName(query1,"a".concat("%"));
+		assertEquals(2, list2.size());
+		
+		
+	}
+	@Test
 	@Order(5)
+	@Disabled
 	@Sql(scripts = {
 			"classpath:/person.sql",
 			"classpath:/insert.sql"
@@ -37,6 +73,7 @@ public class B_UseQueryTest{
 	
 	@Test
 	@Order(4)
+	@Disabled
 	@Sql(scripts = {
 			"classpath:/person.sql",
 			"classpath:/insert.sql"
@@ -50,6 +87,7 @@ public class B_UseQueryTest{
 	
 	@Test
 	@Order(3)
+	//@Disabled
 	@Sql(scripts = {
 			"classpath:/person.sql",
 			"classpath:/insert.sql"
@@ -63,6 +101,7 @@ public class B_UseQueryTest{
 	
 	@Test
 	@Order(2)
+	//@Disabled
 	@Sql(scripts = {
 			"classpath:/person.sql",
 			"classpath:/insert.sql"
@@ -76,6 +115,7 @@ public class B_UseQueryTest{
 	
 	@Test
 	@Order(1)
+	@Disabled
 	@Sql(scripts = {
 			"classpath:/person.sql",
 			"classpath:/insert.sql"

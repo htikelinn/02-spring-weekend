@@ -10,6 +10,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
 import com.jdc.mkt.dto.Person;
 import com.jdc.mkt.dto.Person.Days;
@@ -46,6 +48,19 @@ public class AppConfig {
 			p.setDay(Days.valueOf(rs.getString("days")));
 			return p;
 		};
+	}
+	
+	@Bean
+	NamedParameterJdbcTemplate nameParams(JdbcTemplate template) {
+		return new NamedParameterJdbcTemplate(template);
+	}
+	
+	@Bean
+	SimpleJdbcInsert insert(JdbcTemplate template) {
+		var insert = new SimpleJdbcInsert(template);
+		insert.setTableName("person_tbl");
+		insert.setGeneratedKeyName("id");
+		return insert;
 	}
 	
 	@Bean

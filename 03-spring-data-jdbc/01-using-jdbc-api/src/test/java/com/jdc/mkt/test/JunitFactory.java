@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import com.jdc.mkt.PrintLogger;
 import com.jdc.mkt.utils.anno.Connector;
 
 @TestMethodOrder(OrderAnnotation.class)

@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "contact_tbl")
+@Table(name = "customers_tbl")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
@@ -21,5 +21,7 @@ public class Customer {
     private String primaryPhone;
     @Column(length = 45)
     private String secondaryPhone;
+
+    
     
 }

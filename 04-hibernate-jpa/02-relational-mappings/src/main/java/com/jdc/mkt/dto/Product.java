@@ -39,6 +39,6 @@ public class Product {
 	@JoinColumn(name = "cat_id",nullable = false)
 	private Category category;
 
-	@ManyToMany
+	@ManyToMany(mappedBy = "products")
 	private List<Voucher> vouchers;
 }

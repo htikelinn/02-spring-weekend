@@ -1,78 +1,47 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.jdc.mkt</groupId>
-  <artifactId>04-hibernate-jpa</artifactId>
-  <version>1.0</version>
-  <packaging>pom</packaging>
-  
-  <properties>
-  	<hibernate.version>6.6.25.Final</hibernate.version>
-  	<junit.version>5.13.0</junit.version>
-  	<lombok.version>1.18.38</lombok.version>
-  	<maven.compiler.release>21</maven.compiler.release>
-  	<printlogger.version>1.0</printlogger.version>
-  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  
-  <dependencies>
- 	<dependency>
-	    <groupId>org.hibernate.orm</groupId>
-	    <artifactId>hibernate-core</artifactId>
-	    <version>${hibernate.version}</version>
-	</dependency>
-	<dependency>
-	    <groupId>org.hibernate</groupId>
-	    <artifactId>hibernate-jpamodelgen</artifactId>
-	    <version>${hibernate.version}</version>
-	    <scope>provided</scope>
-	</dependency>
-	 <dependency>
-	    <groupId>org.projectlombok</groupId>
-	    <artifactId>lombok</artifactId>
-	    <version>${lombok.version}</version>
-	  </dependency>
-  	  <dependency>
-  	  	<groupId>com.jdc.mkt</groupId>
-  	  	<artifactId>PrintLogger</artifactId>
-  	  	<version>${printlogger.version}</version>
-  	  	<scope>test</scope>
-  	  </dependency>
-	 
-  	  <dependency>
-	  	 <groupId>org.junit.jupiter</groupId>
-	  	 <artifactId>junit-jupiter</artifactId>
-	  	 <version>${junit.version}</version>
-	  	 <scope>test</scope>
-  	  </dependency>
-  </dependencies>
-  
-  <modules>  	
-  	<module>01-classfield-mappings</module>
-  	<module>02-relational-mappings</module>
-  	<module>03-mapsId-vs-pkeyJoinColumn</module>
-  	<module>04-inheritance-mappings</module>
-  	<module>05-attribute-converter</module>
-  	<module>06-entitymanager</module>
-  	<module>07-jpa-query</module>
-  </modules>
-    
-  <build>
-  	<plugins>
-  		<plugin>
-  		 <groupId>org.apache.maven.plugins</groupId>
-  		 <artifactId>maven-compiler-plugin</artifactId>
-  		 <version>3.14.0</version>
-  		 <configuration>
-  		 	<annotationProcessorPaths>
-  		 		<annotationProcessorPath>
-  		 			<groupId>org.hibernate</groupId>
-	    			<artifactId>hibernate-jpamodelgen</artifactId>
-	   				<version>${hibernate.version}</version>
-  		 		</annotationProcessorPath>
-  		 	</annotationProcessorPaths>
-  		 </configuration>
-  		</plugin>
-  	</plugins>
-  </build>
-  
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.jdc.mkt</groupId>
+	<artifactId>04-hibernate-jpa</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<hibernate.version>6.6.25.Final</hibernate.version>
+		<junit.version>5.13.0</junit.version>
+		<lombok.version>1.18.38</lombok.version>
+		<maven.compiler.release>21</maven.compiler.release>
+		<printlogger.version>1.0</printlogger.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jdc.mkt</groupId>
+			<artifactId>PrintLogger</artifactId>
+			<version>${printlogger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+	</dependencies>
+	<modules>
+
+		<module>01-classfield-mappings</module>
+		<module>02-relational-mappings</module>
+		<module>relationdemo</module>
+	</modules>
 </project>

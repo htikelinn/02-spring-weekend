@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>02-spring-beans</name>
+	<name>01-spring-ioc</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -22,11 +22,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-<<<<<<< HEAD
-			<id>1756523111751</id>
-=======
-			<id>1753030101533</id>
->>>>>>> origin/hzl
+			<id>1753030101516</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

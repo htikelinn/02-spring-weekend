@@ -43,5 +43,7 @@
 		<module>01-classfield-mappings</module>
 		<module>02-relational-mappings</module>
 		<module>relationdemo</module>
+		<module>mapping-vs-pkey</module>
+		<module>inheritance-mappings</module>
 	</modules>
 </project>

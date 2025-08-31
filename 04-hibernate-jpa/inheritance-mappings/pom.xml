@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -8,16 +7,17 @@
           <artifactId>04-hibernate-jpa</artifactId>
           <version>1.0</version>
     </parent>
-    <artifactId>relationdemo</artifactId>
 
-  <dependencies>
-    <dependency>
-      <groupId>com.mysql</groupId>
-      <artifactId>mysql-connector-j</artifactId>
-      <version>9.4.0</version>
-      <scope>runtime</scope>
-    </dependency>
+    <groupId>com.jdc.mkt</groupId>
+    <artifactId>inheritance-mappings</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-  </dependencies>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>9.4.0</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies> 
 </project>

@@ -1,4 +1,11 @@
 {
   "java.compile.nullAnalysis.mode": "automatic",
+<<<<<<< HEAD
   "java.configuration.updateBuildConfiguration": "automatic"
+=======
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.project.sourcePaths": [],
+  "java.dependency.packagePresentation": "hierarchical",
+  "java.dependency.syncWithFolderExplorer": false
+>>>>>>> bb83da6 (update setting)
 }

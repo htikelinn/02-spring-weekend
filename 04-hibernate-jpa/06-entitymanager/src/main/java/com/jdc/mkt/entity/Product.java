@@ -1,17 +1,16 @@
-package com.jdc.mkt.dto;
+package com.jdc.mkt.entity;
 
 import java.util.List;
 
-import org.hibernate.annotations.Check;
 import org.hibernate.annotations.ColumnDefault;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -19,28 +18,23 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "product_tbl")
-@Check(constraints = "dt_price >= ws_price")
 public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
-	@Column(columnDefinition = "varchar(25) check(char_length(name) >= 5) default 'No Name'")
+	
+	@Column(nullable = false,length = 45)
 	private String name;
-
-	private double dt_price;
-	private double ws_price;
-
+	
+	@ColumnDefault("1.0")
+	private double price;
+	
 	@ColumnDefault("true")
 	private boolean active;
-
-	@ManyToOne
-	// @JoinTable(name = "product_category_tbl")
-	@JoinColumn(name = "cat_id", nullable = false)
+	
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Category category;
-
-	@ManyToMany(mappedBy = "products")
-	private List<Voucher> vouchers;
-
+	
+	
 }

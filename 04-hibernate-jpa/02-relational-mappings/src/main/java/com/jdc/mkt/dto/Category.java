@@ -20,6 +20,7 @@ public class Category {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name ="cat_id")
 	private int id;
 	
 	@Column(nullable = false,length = 25,unique = true)
@@ -30,5 +31,17 @@ public class Category {
 
 	@OneToMany(mappedBy = "category")
 	private List<Product> products;
+	
+//	@OneToMany
+//	//@JoinColumn(name = "category_id")
+//	@JoinTable(
+//			name = "j_cat_product_tbl",
+//			joinColumns = {
+//					@JoinColumn(name = "cat_id",referencedColumnName = "cat_id")
+//			},
+//			inverseJoinColumns = {
+//					@JoinColumn(name = "prod_id",referencedColumnName = "id")
+//			})
+//	private List<Product> proudcts;
 	
 }

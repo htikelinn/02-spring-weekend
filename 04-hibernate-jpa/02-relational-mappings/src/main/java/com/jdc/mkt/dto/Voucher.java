@@ -16,20 +16,20 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "vouchers")
+@Table(name = "voucher_tbl")
 public class Voucher {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "sales_date", columnDefinition = "date default(current_date)")
-    private LocalDate salesDate;
-    @Column(name = "sales_time", columnDefinition = "time default(current_time)")
-    private LocalTime salesTime;
+    @Column(columnDefinition = "date default(current_date)")
+    private LocalDate saleDate;
+    @Column(columnDefinition = "time default(current_time)")
+    private LocalTime saleTime;
 
     @ManyToOne
     private Customer customer;
 
     @ManyToMany
     private List<Product> products;
-
 }

@@ -1,6 +1,7 @@
 {
   "java.compile.nullAnalysis.mode": "automatic",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "java.configuration.updateBuildConfiguration": "automatic"
 =======
   "java.configuration.updateBuildConfiguration": "interactive",
@@ -8,4 +9,11 @@
   "java.dependency.packagePresentation": "hierarchical",
   "java.dependency.syncWithFolderExplorer": false
 >>>>>>> bb83da6 (update setting)
+=======
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.project.sourcePaths": [],
+  "java.dependency.packagePresentation": "hierarchical",
+  "java.dependency.syncWithFolderExplorer": true,
+  "java.format.settings.url": ".vscode/java-formatter.xml"
+>>>>>>> bc33001 (update settings)
 }

@@ -7,7 +7,12 @@ import com.jdc.mkt.entity.listener.Times;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
+<<<<<<< HEAD
 import jakarta.persistence.Embedded;
+=======
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+>>>>>>> efe7288 (update persistance)
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -29,6 +34,7 @@ public class Product implements EnableTimeListener{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+<<<<<<< HEAD
 	
 	@NonNull
 	@Column(nullable = false,length = 45)
@@ -64,4 +70,19 @@ public class Product implements EnableTimeListener{
 //		System.out.println("After persist");
 //	}
 	
+=======
+
+	@Column(nullable = false, length = 45)
+	private String name;
+
+	@ColumnDefault("1.0")
+	private double price;
+
+	@ColumnDefault("true")
+	private boolean active;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Category category;
+
+>>>>>>> efe7288 (update persistance)
 }

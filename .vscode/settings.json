@@ -1,7 +1,7 @@
 {
-    "java.compile.nullAnalysis.mode": "automatic",
-    "java.configuration.updateBuildConfiguration": "automatic",
-    "java.project.sourcePaths": [],
-    "java.dependency.packagePresentation": "hierarchical",
-    "java.dependency.syncWithFolderExplorer": false
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.project.sourcePaths": [],
+  "java.dependency.packagePresentation": "hierarchical",
+  "java.dependency.syncWithFolderExplorer": false
 }

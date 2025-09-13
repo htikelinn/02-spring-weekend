@@ -2,35 +2,66 @@ package com.jdc.mkt.entity;
 
 import org.hibernate.annotations.ColumnDefault;
 
+import com.jdc.mkt.entity.listener.EnableTimeListener;
+import com.jdc.mkt.entity.listener.Times;
+import com.jdc.mkt.entity.listener.TimesListener;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PostPersist;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 @Data
 @Entity
 @Table(name = "product_tbl")
-public class Product {
+@NoArgsConstructor
+@RequiredArgsConstructor
+//@EntityListeners(TimesListener.class)
+public class Product implements EnableTimeListener{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
-	@Column(nullable = false, length = 45)
+	
+	@NonNull
+	@Column(nullable = false,length = 45)
 	private String name;
-
+	
+	@NonNull
 	@ColumnDefault("1.0")
-	private double price;
-
+	private Double price;
+	
 	@ColumnDefault("true")
 	private boolean active;
-
-	@ManyToOne(fetch = FetchType.LAZY)
+	
+	
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Category category;
-
+	
+	@Embedded
+	private Times times;
+	
+//	@PrePersist
+//	void beforePersist() {		
+//	System.out.println("Before persist");
+//	
+//	if(null == times) {
+//		times = new Times();
+//		this.setTimes(times);
+//	}
+//	times.setCreateTime(LocalDateTime.now());
+//	}
+//	
+//	@PostPersist
+//	void postPersist() {
+//		System.out.println("After persist");
+//	}
+	
 }

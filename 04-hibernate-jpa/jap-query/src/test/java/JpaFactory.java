@@ -1,3 +1,4 @@
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -5,6 +6,15 @@ import org.junit.jupiter.api.Test;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author uhtin
+ */
 public class JpaFactory {
 
 	protected static EntityManagerFactory emf ;
@@ -25,5 +35,5 @@ public class JpaFactory {
 	@Test
 	void inheritanceTest() {
 	}
-}
 
+}

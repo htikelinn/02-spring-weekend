@@ -1,16 +1,16 @@
 package com.jdc.mkt.dao;
 
-import static com.jdc.mkt.utils.Connector.getConnection;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import com.jdc.mkt.dto.Person;
 import com.jdc.mkt.dto.Person.Days;
+import static com.jdc.mkt.utils.Connector.getConnection;
 
 public non-sealed class StatementService implements DbServiceInt<Person> {
 
 	@Override
+        @SuppressWarnings("CallToPrintStackTrace")
 	public int save(Person p) {
 		try (var con = getConnection(); var stmt = con.createStatement()) {
 
@@ -28,9 +28,10 @@ public non-sealed class StatementService implements DbServiceInt<Person> {
 	}
 
 	@Override
+        @SuppressWarnings({ "CallToPrintStackTrace", "null" })
 	public List<Person> select(Person p) {
 		StringBuilder sb = new StringBuilder("select * from person_tbl p where 1=1");
-		List<Person> persons = new ArrayList<Person>();
+		List<Person> persons = new ArrayList<>();
 		
 		if (null != p) {
 			if (null != p.getName()) {

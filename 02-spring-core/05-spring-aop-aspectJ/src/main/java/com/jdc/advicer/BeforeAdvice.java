@@ -10,6 +10,7 @@ import com.jdc.utils.ShowLogger;
 @Component
 public class BeforeAdvice implements MethodBeforeAdvice{
 
+	@SuppressWarnings("null")
 	@Override
 	public void before(Method method, Object[] args, Object target) throws Throwable {
 		System.out.println("     ====================================");

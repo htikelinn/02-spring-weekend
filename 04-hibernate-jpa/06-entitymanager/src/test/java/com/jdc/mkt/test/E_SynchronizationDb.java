@@ -28,17 +28,16 @@ public class E_SynchronizationDb extends JpaFactory{
 	@Order(1)
 	void test2() throws InterruptedException {
 		var t1 = OperationOne();
-		var t2 = OperatonTwo();
+		// var t2 = OperatonTwo();
 		t1.join();
 	}
 
-	private Object OperatonTwo() {
+	// private Object OperatonTwo() {
 		
-		return null;
-	}
+	// 	return null;
+	// }
 
 	private Thread OperationOne() {
-		// TODO Auto-generated method stub
 		em.getTransaction().begin();
 		System.out.println("=== Before UPdate Operation one ===");
 

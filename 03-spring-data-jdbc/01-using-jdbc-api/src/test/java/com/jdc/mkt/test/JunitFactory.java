@@ -10,12 +10,12 @@ import com.jdc.mkt.utils.anno.Connector;
 @Connector(name = "testDb", user = "root", password = "admin")
 public class JunitFactory {
 
-	static PrintLogger logger;
+	// static PrintLogger logger;
 	
 	@BeforeAll
 	static void init() {
-		logger = PrintLogger.getInstance(StatementTest.class);
-		logger.PrintTableByupdateQuery("truncate table person_tbl");
+		// logger = PrintLogger.getInstance(StatementTest.class);
+		// logger.PrintTableByupdateQuery("truncate table person_tbl");
 		
 	}
 }

@@ -45,5 +45,13 @@
 		<module>relationdemo</module>
 		<module>mapping-vs-pkey</module>
 		<module>inheritance-mappings</module>
+<<<<<<< HEAD
+=======
+		<module>03-mapsId-vs-pkeyJoinColumn</module>
+		<module>04-inheritance-mappings</module>
+		<module>05-attribute-converter</module>
+		<module>06-entitymanager</module>
+		<module>jap-query</module>
+>>>>>>> d711fdd (add jpa project)
 	</modules>
 </project>

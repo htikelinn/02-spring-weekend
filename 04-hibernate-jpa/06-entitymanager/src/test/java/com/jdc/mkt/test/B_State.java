@@ -90,7 +90,7 @@ public class B_State extends JpaFactory {
 		list.remove(1);
 		
 		em.getTransaction().commit();
-		logger.printTableByStringQuery("select * from product_tbl");
+		// logger.printTableByStringQuery("select * from product_tbl");
 		em.close();
 	}
 

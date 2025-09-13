@@ -8,11 +8,16 @@ import com.jdc.mkt.entity.listener.Times;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import jakarta.persistence.Embedded;
 =======
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 >>>>>>> efe7288 (update persistance)
+=======
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+>>>>>>> b27e848 (update test)
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;

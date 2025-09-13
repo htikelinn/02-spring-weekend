@@ -1,5 +1,6 @@
 package com.jdc.mkt.test;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 import com.jdc.mkt.entity.Account;
@@ -9,6 +10,7 @@ public class E_SynchronizationDb extends JpaFactory {
 	@Test
 	void test() throws InterruptedException {
 
+<<<<<<< HEAD
 		Thread opeOne = OperationOne(5000);
 		Thread opeTwo = OperationTwo(15000);
 		opeOne.start();
@@ -43,7 +45,41 @@ public class E_SynchronizationDb extends JpaFactory {
 				e.printStackTrace();
 			}
 		});
+=======
+		em.getTransaction().begin();
+		var p = em.find(Product.class, 1);
+		p.setName("Banana");
+		em.flush();
 		
+		em.refresh(p);
+		var p1 = em.find(Product.class, 1);
+		
+		System.out.println(p1.getName());
+		
+		em.getTransaction().commit();
+		em.close();
+	}
+
+	@Test
+	@Order(1)
+	void test2() throws InterruptedException {
+		var t1 = OperationOne();
+		var t2 = OperatonTwo();
+		t1.join();
+	}
+
+	private Object OperatonTwo() {
+>>>>>>> b27e848 (update test)
+		
+		return null;
+	}
+
+	private Thread OperationOne() {
+		// TODO Auto-generated method stub
+		em.getTransaction().begin();
+		System.out.println("=== Before UPdate Operation one ===");
+
+		return null;
 	}
 
 	private Thread OperationTwo(double balance) {

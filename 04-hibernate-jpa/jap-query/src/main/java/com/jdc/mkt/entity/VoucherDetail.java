@@ -1,7 +1,6 @@
-package main.java.com.jdc.mkt.entity;
+package com.jdc.mkt.entity;
 
 
-import com.jdc.mkt.entity.Product;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;

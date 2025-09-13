@@ -1,4 +1,7 @@
-package main.java.com.jdc.mkt.entity;
+package com.jdc.mkt.entity;
+
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 public class VoucherDetailPk {
     

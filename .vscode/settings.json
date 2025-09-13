@@ -14,6 +14,12 @@
   "java.project.sourcePaths": [],
   "java.dependency.packagePresentation": "hierarchical",
   "java.dependency.syncWithFolderExplorer": true,
+<<<<<<< HEAD
   "java.format.settings.url": ".vscode/java-formatter.xml"
 >>>>>>> bc33001 (update settings)
 }
+=======
+  "java.format.settings.url": ".vscode/java-formatter.xml",
+  "java.search.scope": "all"
+}
+>>>>>>> b0bb33f (Some settings are change)

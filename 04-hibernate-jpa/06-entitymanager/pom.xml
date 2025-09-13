@@ -6,6 +6,10 @@
     <version>1.0</version>
   </parent>
   <artifactId>06-entitymanager</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+    <module>jap-query</module>
+  </modules>
   
   <dependencies>
   	<dependency>

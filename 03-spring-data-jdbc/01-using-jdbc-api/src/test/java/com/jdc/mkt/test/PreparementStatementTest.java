@@ -49,6 +49,6 @@ public class PreparementStatementTest extends JunitFactory{
 		var res = service.save(p);
 		assertEquals(1, res);
 
-		logger.printTableByStringQuery("select * from person_tbl");
+		// logger.printTableByStringQuery("select * from person_tbl");
 	}
 }

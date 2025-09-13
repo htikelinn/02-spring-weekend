@@ -16,11 +16,19 @@
 	</natures>
 	<filteredResources>
 		<filter>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 			<id>1756523111760</id>
 =======
 			<id>1753030101540</id>
+<<<<<<< HEAD
 >>>>>>> 66daadf (add some file)
+=======
+>>>>>>> origin/hzl
+=======
+			<id>1757236748363</id>
+>>>>>>> Stashed changes
+>>>>>>> 0b0672a (update and add .project file)
 			<name></name>
 			<type>30</type>
 			<matcher>

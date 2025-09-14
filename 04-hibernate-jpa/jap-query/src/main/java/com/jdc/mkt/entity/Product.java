@@ -39,7 +39,7 @@ public class Product {
 
 	@ManyToOne
 	// @JoinTable(name = "product_category_tbl")
-	@JoinColumn(name = "cat_id", nullable = false)
+	@JoinColumn(name = "category_id", nullable = false)
 	private Category category;
 
 	@ManyToMany(mappedBy = "products")

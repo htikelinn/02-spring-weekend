@@ -1,4 +1,4 @@
-package com.jdc.mkt.dto;
+package com.jdc.mkt.entity;
 
 import java.util.List;
 
@@ -10,37 +10,40 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
 @Table(name = "product_tbl")
 @Check(constraints = "dt_price >= ws_price")
+@NamedQuery(name = "countByProductDtPrice",
+			query = "select count(p) from Product p where p.dtPrice between :from and :to")
 public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@Column(columnDefinition = "varchar(25) check(char_length(name) >= 5) default 'No Name'")
 	private String name;
 	
-	private double dt_price;
-	private double ws_price;
+	@Column(name = "dt_price")
+	private double dtPrice;
+	
+	@Column(name = "ws_price")
+	private double wsPrice;
 	
 	@ColumnDefault("true")
 	private boolean active;
 	
 	@ManyToOne
-	//@JoinTable(name = "product_category_tbl")
-	@JoinColumn(name = "cat_id",nullable = false)
-	private Category category;
+	private Category category ;
 	
-	@ManyToMany(mappedBy = "products")
-	private List<Voucher> vouchers;
+	@OneToMany(mappedBy = "product")
+	private List<VoucherDetail> voucherDetails;
 	
 }

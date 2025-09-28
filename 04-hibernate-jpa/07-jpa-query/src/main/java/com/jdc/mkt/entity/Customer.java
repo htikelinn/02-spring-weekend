@@ -19,18 +19,17 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@Column(nullable = false,length = 45)
+
+	@Column(nullable = false, length = 45)
 	private String name;
-	
-	@Column(name = "member_type")
+
 	@Enumerated(EnumType.STRING)
 	private MemberType memberType;
-	
+
 	@OneToOne(mappedBy = "customer")
 	private Contact contact;
-	
-	public enum MemberType{
-		NoMember,Silver,Gold,Platinum,Diamond
+
+	public enum MemberType {
+		Silver, Gold, Platinum, Diamond
 	}
 }

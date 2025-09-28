@@ -24,21 +24,25 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@Column(columnDefinition = "varchar(25) check(char_length(name) >= 5) default 'No Name'")
 	private String name;
-	
+
 	private double dt_price;
 	private double ws_price;
-	
+
 	@ColumnDefault("true")
 	private boolean active;
-	
+
 	@ManyToOne
-	//@JoinTable(name = "product_category_tbl")
-	@JoinColumn(name = "cat_id",nullable = false)
+	// @JoinTable(name = "product_category_tbl")
+	@JoinColumn(name = "cat_id", nullable = false)
 	private Category category;
 
 	@ManyToMany(mappedBy = "products")
 	private List<Voucher> vouchers;
+<<<<<<< HEAD
+=======
+
+>>>>>>> c1472228983a317981676c25ffba6e7cfe0e2c8b
 }

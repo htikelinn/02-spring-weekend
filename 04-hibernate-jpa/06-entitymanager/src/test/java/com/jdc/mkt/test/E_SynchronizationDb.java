@@ -3,13 +3,14 @@ package com.jdc.mkt.test;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
-import com.jdc.mkt.entity.Account;
+import com.jdc.mkt.entity.Product;
 
-public class E_SynchronizationDb extends JpaFactory {
+public class E_SynchronizationDb extends JpaFactory{
 
 	@Test
-	void test() throws InterruptedException {
+	void test() {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		Thread opeOne = OperationOne(5000);
 		Thread opeTwo = OperationTwo(15000);
@@ -46,6 +47,8 @@ public class E_SynchronizationDb extends JpaFactory {
 			}
 		});
 =======
+=======
+>>>>>>> c1472228983a317981676c25ffba6e7cfe0e2c8b
 		em.getTransaction().begin();
 		var p = em.find(Product.class, 1);
 		p.setName("Banana");
@@ -58,6 +61,7 @@ public class E_SynchronizationDb extends JpaFactory {
 		
 		em.getTransaction().commit();
 		em.close();
+<<<<<<< HEAD
 	}
 
 	@Test
@@ -83,31 +87,27 @@ public class E_SynchronizationDb extends JpaFactory {
 		System.out.println("=== Before UPdate Operation one ===");
 
 		return null;
+=======
+>>>>>>> c1472228983a317981676c25ffba6e7cfe0e2c8b
 	}
 
-	private Thread OperationTwo(double balance) {
+	@Test
+	@Order(1)
+	void test2() throws InterruptedException {
+		var t1 = OperationOne();
+		// var t2 = OperatonTwo();
+		t1.join();
+	}
 
-		return new Thread(() -> {
-			var em = emf.createEntityManager();
-			var a1 = em.find(Account.class, 1);
-			try {
-				em.getTransaction().begin();
-				System.out.println("   =====  Before update opertaion Two ======");
+	// private Object OperatonTwo() {
+		
+	// 	return null;
+	// }
 
-				System.out.println("----- (Two)Before Update Balance :" + a1.getBalance() + "  ------");
+	private Thread OperationOne() {
+		em.getTransaction().begin();
+		System.out.println("=== Before UPdate Operation one ===");
 
-				Thread.sleep(500);
-				//em.refresh(a1);
-				a1.setBalance(a1.getBalance() + balance);
-				em.flush();
-				System.out.println("   =====  After update opertaion Two ======");
-				System.out.println("-----  (Two)After Update Balance :" + a1.getBalance() + " -----");
-
-				em.getTransaction().commit();
-				em.close();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		});
+		return null;
 	}
 }

@@ -32,4 +32,20 @@ public class Voucher {
     @ManyToMany
     private List<Product> products;
 
+<<<<<<< HEAD
+=======
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(columnDefinition = "date default(current_date)")
+    private LocalDate saleDate;
+    @Column(columnDefinition = "time default(current_time)")
+    private LocalTime saleTime;
+
+    @ManyToOne
+    private Customer customer;
+
+    @ManyToMany
+    private List<Product> products;
+>>>>>>> c1472228983a317981676c25ffba6e7cfe0e2c8b
 }

@@ -1,6 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
+<<<<<<< HEAD
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+=======
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+>>>>>>> c1472228983a317981676c25ffba6e7cfe0e2c8b
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jdc.mkt</groupId>
 	<artifactId>04-hibernate-jpa</artifactId>
@@ -46,12 +50,18 @@
 		<module>mapping-vs-pkey</module>
 		<module>inheritance-mappings</module>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> c1472228983a317981676c25ffba6e7cfe0e2c8b
 		<module>03-mapsId-vs-pkeyJoinColumn</module>
 		<module>04-inheritance-mappings</module>
 		<module>05-attribute-converter</module>
 		<module>06-entitymanager</module>
 		<module>jap-query</module>
+<<<<<<< HEAD
 >>>>>>> d711fdd (add jpa project)
+=======
+>>>>>>> c1472228983a317981676c25ffba6e7cfe0e2c8b
 	</modules>
 </project>

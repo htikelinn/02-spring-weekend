@@ -8,9 +8,12 @@ import org.junit.jupiter.api.TestMethodOrder;
 
 import com.jdc.mkt.utils.anno.Connector;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> b27e848 (update test)
+=======
+>>>>>>> c1472228983a317981676c25ffba6e7cfe0e2c8b
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -37,9 +40,10 @@ public class JpaFactory {
 	
 	@BeforeEach
 	void createEm() {
-		//em = emf.createEntityManager();		
+		em = emf.createEntityManager();		
 	}
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@AfterEach
 	void log() {
@@ -47,11 +51,16 @@ public class JpaFactory {
 		//logger.printTableByStringQuery("select * from category_tbl");
 		//logger.printTableByStringQuery("select * from product_tbl");
 =======
+=======
+>>>>>>> c1472228983a317981676c25ffba6e7cfe0e2c8b
 	// @AfterEach
 	// void log() {
 	// 	logger.printTableByStringQuery("select * from category_tbl");
 	// 	logger.printTableByStringQuery("select * from product_tbl");
+<<<<<<< HEAD
 >>>>>>> b27e848 (update test)
+=======
+>>>>>>> c1472228983a317981676c25ffba6e7cfe0e2c8b
 			
 	// }
 	

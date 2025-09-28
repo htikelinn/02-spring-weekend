@@ -22,6 +22,25 @@ public class Customer {
     @Column(length = 45)
     private String secondaryPhone;
 
+<<<<<<< HEAD
     
     
+=======
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
+	@Column(nullable = false, length = 45)
+	private String name;
+
+	@Enumerated(EnumType.STRING)
+	private MemberType memberType;
+
+	@OneToOne(mappedBy = "customer")
+	private Contact contact;
+
+	public enum MemberType {
+		Silver, Gold, Platinum, Diamond
+	}
+>>>>>>> c1472228983a317981676c25ffba6e7cfe0e2c8b
 }
